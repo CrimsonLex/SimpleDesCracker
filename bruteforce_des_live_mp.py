@@ -153,7 +153,7 @@ def main():
     else:
         total_est = (len(args.charset) ** args.length)
         for i in range(procs):
-            key_iters.append(product_keys_interleaved(args.charset, args.length, i, procs))
+            key_iters.append(list(product_keys_interleaved(args.charset, args.length, i, procs)))
 
     print(f"[*] Núcleos: {procs}  |  Fuente: {'wordlist' if args.wordlist else 'generador'}  |  Espacio ~ {total_est:,} claves")
 
